@@ -1,0 +1,170 @@
+@import '../../sass/index.scss';
+.hero {
+    margin-top: -5rem;
+    padding-top: 5rem;
+    height: 100vh;
+    position: relative;
+    &.dark {
+        background: $clr-primary-10-dark;
+    }
+    &.light {
+        background: $clr-white;
+    }
+}
+
+.hero-center {
+    height: 100%;
+    display: grid;
+    align-items: center;
+}
+
+.hero .underline {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+}
+
+.hero-info {
+    z-index: 2;
+}
+
+.home-profesion {
+    &.dark {
+        color: $clr-grey-5-dark;
+    }
+    &.light {
+        color: $clr-grey-5;
+    }
+}
+
+.hero-icons {
+    justify-items: flex-start;
+}
+
+.hero .btn {
+    margin-top: 1.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.social-links {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-link {
+    font-size: 1.75rem;
+    transition: $transition;
+    &.dark {
+        color: $clr-white;
+    }
+    &.light {
+        color: $clr-grey-1;
+    }
+}
+
+.social-link:hover {
+    &.dark {
+        color: $clr-primary-5-dark;
+    }
+    &.light {
+        color: $clr-primary-5;
+    }
+}
+
+.home-name-hello {
+    &.dark {
+        color: $clr-white;
+    }
+    &.light {
+        color: $clr-black;
+    }
+    @media only screen and (max-width: 767px) {
+        font-size: 34px;
+    }
+    @media only screen and (max-width: 350px) {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hero-img {
+        margin-top: 10px;
+    }
+    .home-profesion {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 65%;
+        right: 0;
+        bottom: 0;
+    }
+    .hero-center {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .home-profesion {
+        font-size: 0.85rem;
+    }
+    .hero-info {
+        grid-row: 1/1;
+        grid-column: 1 / span 8;
+    }
+    .hero-img {
+        display: block;
+        grid-row: 1/1;
+        grid-column: 6/-1;
+    }
+}
+
+.link-button-toggle-lang {
+    background: none!important;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: $clr-grey-1;
+    letter-spacing: $spacing;
+    transition: $transition;
+    padding-bottom: 7px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    @media only screen and (max-width: 767px) {
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .home-profesion {
+        font-size: 1rem;
+    }
+    .hero-info {
+        grid-column: 1 / span 8;
+    }
+    .hero h2 {
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 200px),
+screen and (max-height: 560px) {
+    .hero-img {
+        max-width: 200px;
+        width: 70%;
+        margin: 0px auto;
+        margin-right: -10px;
+        margin-bottom: 15px;
+    }
+    .home-profesion {
+        margin: 0;
+    }
+    .social-links {
+        width: 10rem;
+        margin-top: -10px;
+    }
+}

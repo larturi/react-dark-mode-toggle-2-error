@@ -1,0 +1,9 @@
+@import '../sass/index.scss';
+
+.project-template-page,
+.projects-page,
+.error-page,
+.about-page,
+.contact-page {
+    min-height: calc(100vh - 5rem - 9rem);
+}
