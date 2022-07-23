@@ -2,7 +2,6 @@ import './Navbar.scss';
 
 import React, { useState, useContext, useEffect } from 'react';
 import { FaAlignRight } from 'react-icons/fa';
-import { graphql, useStaticQuery, Link } from 'gatsby';
 import { DarkModeToggle } from 'react-dark-mode-toggle-2';
 
 import {
@@ -12,18 +11,12 @@ import {
 
 const Navbar = props => {
   const [isDarkMode, setIsDarkMode] = useState(null);
-  const [transparentNavbar, setTransparentNavbar] = useState('');
+  const [transparentNavbar] = useState('');
 
-  const { toggleSidebar, path } = props;
+  const { toggleSidebar } = props;
 
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
-
-  let currentLanguaje = state.selectedLang || 'es-AR';
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('locale'))
-      currentLanguaje = localStorage.getItem('locale');
-  }
 
   let currentTheme = state.selectedTheme || 'dark';
   if (typeof window !== 'undefined') {
